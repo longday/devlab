@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>CS8600;CS8602;CS8603</WarningsAsErrors>
+    <Version>1.0.0.0</Version>
+    <RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
+    <!-- <PublishTrimmed>true</PublishTrimmed> -->
+    <!-- https://github.com/dotnet/runtimelab/blob/feature/NativeAOT/docs/using-nativeaot/optimizing.md -->
+    <!-- <RootAllApplicationAssemblies>false</RootAllApplicationAssemblies>
+    <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+    <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData> -->
+    <IlcDisableReflection>true</IlcDisableReflection>
+    <!-- <IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies> -->
+    <!-- <IlcOptimizationPreference>Size</IlcOptimizationPreference> -->
+    <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+    <!-- <IlcDisableUnhandledExceptionExperience>true</IlcDisableUnhandledExceptionExperience> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="6.0.0-*" />
+  </ItemGroup>
+
+</Project>
