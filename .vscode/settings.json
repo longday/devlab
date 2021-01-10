@@ -1,0 +1,21 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "grpc",
+    "proto",
+    "protobuf"
+  ],
+  "editor.insertSpaces": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.workingDirectories": [
+    "./gRPC/react-app",
+  ]
+}

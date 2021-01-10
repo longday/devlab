@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  server:
+    build:
+      context: ./dotnet
+    volumes:
+      - ./dotnet/Server:/app/Server
+      - /app/Server/bin/
+      - /app/Server/obj/
+    command: bash -c 'cd Server && dotnet watch run --no-launch-profile'
+  react-app:
+    build:
+      context: ./react-app
+    stdin_open: true
+    environment:
+      - REACT_APP_GRPC_PATH=/grpc
+      - REACT_APP_API_PATH=/api
+    volumes:
+      - ./react-app:/app
+      - /app/node_modules
+  nginx:
+    build:
+      context: ./nginx
+    depends_on:
+      - react-app
+      - server
+    ports:
+      - 8443:443
+    volumes:
+      - ./nginx:/etc/nginx
+    command: /etc/nginx/start.sh

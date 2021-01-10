@@ -1,0 +1,11 @@
+.idea
+.rebuild.compose
+.rebuild-compose
+.restore-hash
+node_modules
+videos
+screenshots
+.directory
+*.iml
+.history
+.data

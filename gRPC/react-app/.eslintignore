@@ -1,0 +1,6 @@
+build/*
+public/*
+src/react-app-env.d.ts
+src/registerServiceWorker.js
+src/**/__tests__/**
+src/serviceWorker.ts

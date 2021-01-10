@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package blog;
+
+import "google/protobuf/timestamp.proto";
+
+service Blog {
+  rpc GetBlogs (RequestMsg) returns (ResponseMsg);
+}
+
+message RequestMsg {
+  int32 limit = 1;
+}
+
+message ResponseMsg {
+  repeated BlogDto blogs = 1;
+}
+
+
+message BlogDto {
+  string id = 1;
+  string name = 2;
+  google.protobuf.Timestamp createAt = 3;
+  repeated PostDto posts = 4;
+}
+
+message PostDto {
+  string id = 1;
+  string name = 2;
+  google.protobuf.Timestamp createAt = 3;
+  repeated string tags = 4;
+}
